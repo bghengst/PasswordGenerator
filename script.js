@@ -16,25 +16,32 @@ var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 function writePassword() {
 
-  var userLowerCase = confirm("Do you want to include lowercase letters in your password?");
-  var userUpperCase = confirm("Do you want to include uppercase letters in your password?");
-  var userSpecialCharacter = confirm("Do you want to include special characters?")
-  var userNumber = confirm("Do you want to include numbers?")
+    var userLengthPassword = prompt("How many characters do you want your password to be? You can choose between 8 and 128.")
 
-  if (userLowerCase == false && userUpperCase == false && userSpecialCharacter == false && userNumber == false) {
-    alert("You have to pick one to generate a password");
-    userLowerCase = confirm("Do you want to include lowercase letters in your password?");
-    userUpperCase = confirm("Do you want to include uppercase letters in your password?");
-    userSpecialCharacter = confirm("Do you want to include special characters?")
-    userNumber = confirm("Do you want to include numbers?")
+    if (userLengthPassword < 8 || userLengthPassword > 128 ){
+       alert("You have to pick between 8 and 128");
+        prompt("How many characters do you want your password to be? You can choose between 8 and 128.")
+    }
 
-  }
+    var userLowerCase = confirm("Do you want to include lowercase letters in your password?");
+    var userUpperCase = confirm("Do you want to include uppercase letters in your password?");
+    var userSpecialCharacter = confirm("Do you want to include special characters?")
+    var userNumber = confirm("Do you want to include numbers?")
 
-  var passwordLength 
+   if (userLowerCase == false && userUpperCase == false && userSpecialCharacter == false && userNumber == false) {
+      alert("You have to pick one to generate a password");
+      userLowerCase = confirm("Do you want to include lowercase letters in your password?");
+      userUpperCase = confirm("Do you want to include uppercase letters in your password?");
+      userSpecialCharacter = confirm("Do you want to include special characters?")
+      userNumber = confirm("Do you want to include numbers?")
+
+     }
+    
+    
 
 
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+     var password = generatePassword();
+     var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
