@@ -6,7 +6,7 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 "W","X", "Y", "Z"];
 var specialCharacter = ["!", "@","#", "$", "%", "^", "*", "&", "?", "/", "+"];
 var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-
+var passwordArray =[]
 
 
 
@@ -36,7 +36,21 @@ function writePassword() {
       userNumber = confirm("Do you want to include numbers?")
 
      }
+     if (userLowerCase === true){
+      passwordArray.push(lowerCase)
+    }
+
+    if (userUpperCase === true){
+      passwordArray.push(upperCase)
+    }
+
+    if (userSpecialCharacter === true){
+      passwordArray.push(specialCharacter)
+    }
     
+    if (userNumber === true){
+      passwordArray.push(number)
+    }
     
 
 
