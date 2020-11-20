@@ -52,6 +52,11 @@ function writePassword() {
       passwordArray.push(number)
     }
     
+    var randomNumber;
+    var selectedCharacters;
+    var randomCharacters;
+    var randomCharacterNumbers;
+  
 
 
      var password = generatePassword();
