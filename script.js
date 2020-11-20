@@ -52,10 +52,19 @@ function writePassword() {
       passwordArray.push(number)
     }
     
+    for( var i=0; i<userLengthPassword; i++){
     var randomNumber;
-    var selectedCharacters;
     var randomCharacters;
     var randomCharacterNumbers;
+    var selectedCharacters;
+
+    randomNumber = (Math.floor(Math.random()*passwordArray.length))
+    randomCharacters = selectedCharacters[randomCharactersNumbers]
+    randomCharactersNumbers = Math.floor(Math.random()*selectedCharacters.length))
+    selectedCharacters=passwordArray[randomCharactersNumbers]
+
+    
+     } 
   
 
 
