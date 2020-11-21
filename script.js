@@ -15,18 +15,20 @@ var passwordArray =[]
 
 
 function writePassword() {
+  var passwordString="";
+   
 
-    var userLengthPassword = prompt("How many characters do you want your password to be? You can choose between 8 and 128.")
+    var userLengthPassword = parseInt(prompt("How many characters do you want your password to be? You can choose between 8 and 128."));
 
     if (userLengthPassword < 8 || userLengthPassword > 128 ){
        alert("You have to pick between 8 and 128");
-        prompt("How many characters do you want your password to be? You can choose between 8 and 128.")
+      userLengthPassword=parseInt(prompt("How many characters do you want your password to be? You can choose between 8 and 128."))
     }
 
     var userLowerCase = confirm("Do you want to include lowercase letters in your password?");
     var userUpperCase = confirm("Do you want to include uppercase letters in your password?");
-    var userSpecialCharacter = confirm("Do you want to include special characters?")
-    var userNumber = confirm("Do you want to include numbers?")
+    var userSpecialCharacter = confirm("Do you want to include special characters?");
+    var userNumber = confirm("Do you want to include numbers?");
 
    if (userLowerCase == false && userUpperCase == false && userSpecialCharacter == false && userNumber == false) {
       alert("You have to pick one to generate a password");
@@ -50,34 +52,39 @@ function writePassword() {
     
     if (userNumber === true){
       passwordArray.push(number)
+
+      
     }
     
     for( var i=0; i<userLengthPassword; i++){
-    var randomNumber;
+    var randomNumberArray;
     var randomCharacters;
     var randomCharacterNumbers;
-    var selectedCharacters;
+    var selectedCharactersArray;
 
-    randomNumber = (Math.floor(Math.random()*passwordArray.length))
-    randomCharacters = selectedCharacters[randomCharactersNumbers]
-    randomCharactersNumbers = Math.floor(Math.random()*selectedCharacters.length))
-    selectedCharacters=passwordArray[randomCharactersNumbers]
+    randomNumberArray = parseInt(Math.floor(Math.random()*passwordArray.length));
+    selectedCharactersArray=passwordArray[randomNumberArray];
+    randomCharacterNumbers = Math.floor(Math.random()*selectedCharactersArray.length);
+    randomCharacters = selectedCharactersArray[randomCharacterNumbers];
+    
+    
 
+    passwordString+=randomCharacters
     
      } 
+
+    password.textContent=passwordString;
   
 
-
-     var password = generatePassword();
-     var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-
-
+   
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+ var passwordText = document.querySelector("#password");
+
+
 
 
